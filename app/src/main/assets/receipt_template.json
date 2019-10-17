@@ -1,0 +1,190 @@
+{
+  "print_mode": "text",
+  "charset": "CP437",
+  "force_unidir_print": false,
+  "data": [
+    {
+      "type": "multiline_text",
+      "text": "\nInvoice\n",
+      "reduced_line_spacing": true,
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_value_item",
+      "scale_w": 1,
+      "scale_h": 1,
+      "name": "Merchant Name: ",
+      "name_is_bold": false,
+      "value": "{shop.merchant: text}",
+      "value_is_bold": true,
+      "value_align": "left"
+    },
+    {
+      "type": "single_value_item",
+      "scale_w": 1,
+      "scale_h": 1,
+      "name": "MerchantId: ",
+      "name_is_bold": false,
+      "value": "{shop.merchantId: text}",
+      "value_is_bold": true,
+      "value_align": "left"
+    },
+    {
+      "type": "single_value_item",
+      "scale_w": 1,
+      "scale_h": 1,
+      "name": "Receipt # ",
+      "name_is_bold": false,
+      "value": "{receipt_number: int}",
+      "value_is_bold": false,
+      "value_align": "left"
+    },
+    {
+      "type": "single_text",
+      "text": "",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "Date: {now_timestamp: timestamp(%1$td/%1$tm/%1$tY %1$tR)}",
+      "text_align": "right",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "goods_collect_table",
+      "locale": "en-GB",
+      "opt_items_start_padding": 1,
+      "column_items": {
+        "title": "ITEMS",
+        "title_align": "left",
+        "title_bold": true,
+        "content_align": "left",
+        "content_bold": false
+      },
+      "column_weight": {
+        "title": "Qty\n(Person)",
+        "title_align": "left",
+        "title_bold": false,
+        "content_align": "right",
+        "content_bold": false,
+        "min_width": 6
+      },
+      "column_amount": {
+        "title": "Amount\n(IDR)",
+        "title_align": "left",
+        "title_bold": false,
+        "content_align": "right",
+        "content_bold": false,
+        "min_width": 6,
+        "max_width": 9
+      },
+      "row_total": {
+        "title": "Total",
+        "bold": true,
+        "align_title": "left",
+        "align_value": "right",
+        "format_value_as_currency": true
+      },
+      "data": "{collected_goods: CollectedGoodItem[]}"
+    },
+    {
+      "type": "single_text",
+      "text": "Payment Method: {payment_method: text}",
+      "text_align": "right",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "image",
+      "width": "{customer.signature.width: int}",
+      "height": "{customer.signature.height: int}",
+      "horizontal_align": "center",
+      "data_base64": "{customer.signature.data: base64}"
+    },
+    {
+      "type": "single_value_item",
+      "scale_w": 1,
+      "scale_h": 1,
+      "name": "Customer: ",
+      "name_is_bold": false,
+      "value": "{driver_name: text}",
+      "value_is_bold": false,
+      "value_align": "left"
+    },
+    {
+      "type": "single_text",
+      "text": "",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "{organization.title: text}",
+      "all_caps": true,
+      "bold": true,
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "{organization.address[0]: text}",
+      "all_caps": true,
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "{organization.address[1]: text}",
+      "all_caps": true,
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "TEL: {organization.telephone: text}",
+      "all_caps": true,
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "Email: {organization.email: text}",
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "Website: {organization.web: text}",
+      "text_align": "center",
+      "scale_w": 1,
+      "scale_h": 1
+    },
+    {
+      "type": "single_text",
+      "text": "-----------------------------------------------------",
+      "scale_w": 1,
+      "scale_h": 1
+    }
+  ]
+}
